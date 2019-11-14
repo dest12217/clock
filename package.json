@@ -1,21 +1,55 @@
 {
-  "name": "webpack-base",
+  "name": "clock",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "lint": "eslint ./public/script/**/*.js -c ./package.json"
+    "webpack:build": "webpack",
+    "webpack:watch": "webpack -w",
+    "lint": "eslint ./src/ts/**/*.ts -c ./package.json"
   },
   "author": "",
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
-    "eslint": "^6.5.1"
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-loader": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "eslintConfig": {
     "extends": [
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
     ],
-    "rules": {}
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "@typescript-eslint/indent": "off",
+      "curly": [
+        "error",
+        "multi"
+      ],
+      "indent": [
+        "error",
+        2
+      ]
+    }
   }
 }
