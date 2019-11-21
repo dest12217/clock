@@ -98,7 +98,17 @@ class SetClock {
     const circumference = Number(statusSvgCircle.r) * 2 * Math.PI;
     const elm = elmSvg[type];
     const elmPghItem = root.querySelector(`${selectorPghWrap} .__type_${type}`);
-    const ratio = dateNow[type] / ((type === 'hours') ? 12 : 60);
+    let ratio = 0;
+
+    if (type === 'hours') {
+      if (dateNow[type] > 12) {
+        ratio = (dateNow[type] - 12) / 12;
+      } else {
+        ratio = dateNow[type] / 12;
+      }
+    } else {
+      ratio = dateNow[type] / 60;
+    }
 
     if (!elm) return;
 
