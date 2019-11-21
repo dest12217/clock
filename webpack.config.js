@@ -6,7 +6,7 @@ module.exports = {
   mode: "production", // or "development"
   entry: "./src/ts/index.ts",
   output: {
-    path: __dirname + "/dist/",
+    path: __dirname + "/docs/",
     filename: "cmn/js/clock.js"
   },
   module: {
