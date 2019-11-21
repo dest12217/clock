@@ -8,6 +8,13 @@ html(lang="ja")
     title CLOCK's
   body
     #page
-      main#main
+      header#header
         h1.ttl_page_01 CLOCK's
+        include _nav.pug
+      main#main
         include _clock.pug
+      footer#footer
+        p.copyright: small
+          | (C) 
+          a(href="https://github.com/dest12217/clock" target="_blank" rel="noopener") dest12217 
+          | 2019

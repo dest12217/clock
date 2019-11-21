@@ -9,3 +9,6 @@ trim_trailing_whitespace = true
 
 [*.{js,jsx,ts,tsx,pug,scss}]
 indent_size = 2
+
+[*.pug]
+trim_trailing_whitespace = false
