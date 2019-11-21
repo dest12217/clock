@@ -1,0 +1,25 @@
+-
+  var opt = {
+    declaration: 'http://www.w3.org/2000/svg',
+    radius: 120
+  };
+
+mixin setCircle(cls, r)
+  svg(class=('clock_circle ' + cls) xmlns=opt.declaration width=(r * 2) height=(r * 2))
+    circle.__bg(cx=r cy=r r="100")
+
+#clock
+  noscript JavaScriptを有効にしてください
+  .clock_content
+    .clock_col
+      +setCircle('__type_hours', opt.radius)
+    .clock_col
+      +setCircle('__type_minutes', opt.radius)
+    .clock_col
+      +setCircle('__type_seconds', opt.radius)
+  p.clock_pgh
+    span.__type_hours 88
+    span :
+    span.__type_minutes 88
+    span :
+    span.__type_seconds 88
