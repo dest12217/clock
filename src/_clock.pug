@@ -1,22 +1,25 @@
-div#ttl_clock
-  h1
-    span ただいまの時間は
-    strong 88:88:88
-    span です
+-
+  var opt = {
+    declaration: 'http://www.w3.org/2000/svg',
+    radius: 120
+  };
+
+mixin setCircle(cls, r)
+  svg(class=('clock_circle ' + cls) xmlns=opt.declaration width=(r * 2) height=(r * 2))
+    circle.__bg(cx=r cy=r r="100")
+
+#clock
   noscript JavaScriptを有効にしてください
-div#clock
-  div.clock__col
-    svg.clock__circle(xmlns="http://www.w3.org/2000/svg" width="240px" height="240px")
-      title 88時
-      circle.__bg(cx="120" cy="120" r="100")
-      circle.__type_01(cx="120" cy="120" r="100")
-  div.clock__col
-    svg.clock__circle(xmlns="http://www.w3.org/2000/svg" width="240px" height="240px")
-      title 88時
-      circle.__bg(cx="120" cy="120" r="100")
-      circle.__type_01(cx="120" cy="120" r="100")
-  div.clock__col
-    svg.clock__circle(xmlns="http://www.w3.org/2000/svg" width="240px" height="240px")
-      title 88時
-      circle.__bg(cx="120" cy="120" r="100")
-      circle.__type_01(cx="120" cy="120" r="100")
+  .clock_content
+    .clock_col
+      +setCircle('__type_hours', opt.radius)
+    .clock_col
+      +setCircle('__type_minutes', opt.radius)
+    .clock_col
+      +setCircle('__type_seconds', opt.radius)
+  p.clock_pgh
+    span.__type_hours 88
+    span :
+    span.__type_minutes 88
+    span :
+    span.__type_seconds 88

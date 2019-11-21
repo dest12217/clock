@@ -42,10 +42,7 @@
     },
     "rules": {
       "@typescript-eslint/indent": "off",
-      "curly": [
-        "error",
-        "multi"
-      ],
+      "curly": "off",
       "indent": [
         "error",
         2
